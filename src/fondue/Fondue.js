@@ -877,6 +877,7 @@ export default class Fondue {
 			if (lookup.lookupType === 6) {
 				lookup.subtableOffsets.forEach((_, i) => {
 					const subtable = lookup.getSubTable(i);
+					if (!subtable?.inputGlyphCount) return;
 
 					let inputChars;
 					let backtrackChars;
